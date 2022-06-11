@@ -2,7 +2,7 @@ server {
   listen 443;
   listen [::]:443;
   server_name localhost;
-  if ($host = netology.local) {
+  if ($host = localhost) {
     return 301 https://$host$request_uri;
   }
   location / {
