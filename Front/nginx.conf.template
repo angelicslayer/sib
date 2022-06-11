@@ -1,8 +1,10 @@
 server {
-  listen 80;
-  listen [::]:80;
+  listen 443;
+  listen [::]:443;
   server_name localhost;
-
+  if ($host = netology.local) {
+    return 301 https://$host$request_uri;
+  }
   location / {
     root /app;
     index index.html;
